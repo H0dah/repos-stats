@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import Flask
+from flask import Flask, jsonify
 import urllib.request
 import datetime
 import json
@@ -14,5 +13,17 @@ def top_repos():
     with urllib.request.urlopen(url) as json_url:
         data = json.loads(json_url.read())
 
-    
-    return 'it works'
+    languages = {}
+
+    for item in data['items']:
+        if item['language'] is None:
+            item['language'] = "None"
+
+        if item['language'] in languages:
+            languages[item['language']]['num_of_repos'] +=1
+            languages[item['language']]['repos'].append(item)
+
+        else:
+            languages[item['language']] = {'num_of_repos': 1, 'repos': [item]}
+
+    return jsonify(languages)
