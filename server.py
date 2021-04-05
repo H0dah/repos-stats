@@ -7,6 +7,7 @@ app = Flask(__name__)
 # This line to make response Pretty Printed if you want to disable it set it to False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
+
 @app.route('/top_repos', methods=['GET'])
 def top_repos():
     # fetch starred repos created in last 30 days
@@ -25,7 +26,7 @@ def top_repos():
             item['language'] = "None"
 
         if item['language'] in languages:
-            languages[item['language']]['num_of_repos'] +=1
+            languages[item['language']]['num_of_repos'] += 1
             languages[item['language']]['repos'].append(item)
 
         else:
