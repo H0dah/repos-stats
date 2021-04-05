@@ -3,6 +3,7 @@ import urllib.request
 import datetime
 import json
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/top_repos', methods=['GET'])
 def top_repos():
