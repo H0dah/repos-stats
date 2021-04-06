@@ -39,16 +39,16 @@ You should have Python 3 installed on your machine
 
 # Response Structure
 
-{
-    "Language_name": {
-        "num_of_repos": 3,
-        "repos": [
-            {repo1
-            },
-            {repo2
-            },
-            {repo3
-            }
-        ]
-    }
-}
+        {
+           "Language_name": {
+               "num_of_repos": 3,
+              "repos": [
+                   {repo1
+                   },
+                   {repo2
+                   },
+                   {repo3
+                   }
+              ]
+          }
+        }
