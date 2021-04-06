@@ -23,7 +23,7 @@ def top_repos():
 
     for item in data['items']:
         if item['language'] is None:
-            item['language'] = "None"
+            item['language'] = "null"
 
         if item['language'] in languages:
             languages[item['language']]['num_of_repos'] += 1
